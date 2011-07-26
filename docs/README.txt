@@ -14,13 +14,13 @@ Setting Up Your VHOST
 The following is a sample VHOST you might want to consider for your project.
 
 <VirtualHost *:80>
-   DocumentRoot "/home/nidorx/Dropbox/Projetos/humrum/src/Social/public"
+   DocumentRoot "/home/nidorx/zend_projeto_nidorx/public"
    ServerName Social.local
 
    # This should be omitted in the production environment
    SetEnv APPLICATION_ENV development
     
-   <Directory "/home/nidorx/Dropbox/Projetos/humrum/src/Social/public">
+   <Directory "/home/nidorx/zend_projeto_nidorx/public">
        Options Indexes MultiViews FollowSymLinks
        AllowOverride All
        Order allow,deny
