@@ -1,0 +1,26 @@
+<?php if (!$this->identity): ?>
+    <p>
+        Crie um conta ou faça login
+    </p>
+<?php else: ?>
+    <p>
+        Seja bem vindo <?php echo $this->identity->name; ?>
+    </p>
+    <p>
+
+    <h1>Perfil</h1>
+    <?php if ($this->profile): ?>
+        <ul>
+            <li><b>Sobre mim</b> <?php echo $this->profile->aboutMe; ?></li>
+
+            <? #definido em: Nidorx_Model_Vo_Common_Date ?>
+            <li><b>Data de nascimento</b> <?php echo $this->profile->birthday->getFormated(); ?></li>
+
+            <? #definido em: Nidorx_Model_Vo_User_Profile ?>
+            <li><b>Sexo</b> <?php echo $this->profile->getGenderFormated(); ?></li>
+        </ul>
+    <?php else: ?>
+        <p>Voce nao editou ainda seu perfil</p>
+    <?php endif; ?>
+    </p>
+<?php endif; ?>

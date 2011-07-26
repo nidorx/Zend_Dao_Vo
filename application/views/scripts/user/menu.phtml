@@ -1,0 +1,30 @@
+
+<?php if (!empty($this->toshow)): ?>
+    <div id="application-menu-header" class="floatr">
+        <ul id="app-nav">
+            <? if (isset($this->toshow['profile'])): ?>
+
+                <li class="profile">
+                    <a href="/">Início</a>
+                    <ul class="child">
+                        <li>
+                            <div>
+                                <div><b>Nome completo:</b> <?php echo $this->identity->name; ?></div>
+                                <div><b>Nome usuário:</b> <?php echo $this->identity->username; ?></div>
+                                <ol>
+                                    <li><a href="/profile/manage">Gerenciar perfil</a></li>
+                                    <li><a href="/account/logout?&redirect=<?php echo $this->redirect ?>">Sair</a></li>
+                                </ol>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+
+            <?php elseif ($this->toshow['login']): ?>
+                <li><a href="/account/create?&redirect=<?php echo $this->redirect ?>">Criar conta</a></li>
+                <li><a rel="toggle" href="/account/login?&redirect=<?php echo $this->redirect ?>">Entrar</a></li>
+            <?php endif; ?>
+        </ul>
+    </div>
+<?php endif; ?>
